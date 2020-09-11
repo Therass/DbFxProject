@@ -1,0 +1,26 @@
+<dbList>
+    <dbName name="PostgreSql">
+        <property name="isSQL" value="SQL" />
+        <property name="jdbcDriver" value="org.postgresql.Driver" />
+        <property name="dbURL" value="jdbc:postgresql://localhost:5432/my_first_db" />
+        <property name="dbUserName" value="postgres" />
+        <property name="dbUserPass" value="123456" />
+    </dbName>
+
+    <dbName name="NOSQL">
+        <property name="isSQL" value="NOSQL" />
+        <property name="jdbcDriver" value="" />
+        <property name="dbURL" value="" />
+        <property name="dbUserName" value="" />
+        <property name="dbUserPass" value="" />
+    </dbName>
+
+    <dbName name="H2(embedded)">
+        <property name="isSQL" value="SQL" />
+        <property name="jdbcDriver" value="org.h2.Driver" />
+        <property name="dbURL" value="jdbc:h2:file:./src/main/resources/db/fruitDb" />
+        <property name="dbUserName" value="sa" />
+        <property name="dbUserPass" value="" />
+    </dbName>
+
+</dbList>

@@ -5,15 +5,11 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-import java.sql.SQLException;
-
-import static javafx.application.Application.launch;
-
 public class MainClass extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("viewMain.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("./fxml/dbChoose.fxml"));
         primaryStage.setTitle("Fruit Store");
         primaryStage.setScene(new Scene(root));
         primaryStage.getIcons().add(new Image("icon.jpg"));
