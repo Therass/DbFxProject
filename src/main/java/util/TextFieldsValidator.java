@@ -2,14 +2,14 @@ package util;
 
 public class TextFieldsValidator {
     public boolean isValid(String... strings) {
-        boolean returningValue = true;
+        boolean isValidReturn = true;
         for (String string : strings) {
             if (string.isEmpty()) {
-                returningValue = false;
+                isValidReturn = false;
                 new AlertWindow("Fill textfields");
                 break;
             }
         }
-        return returningValue;
+        return isValidReturn;
     }
 }

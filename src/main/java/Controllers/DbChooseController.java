@@ -23,7 +23,7 @@ import java.io.IOException;
 
 public class DbChooseController {
 
-    DbList dbList;
+    private DbList dbList;
 
     @FXML
     private ComboBox dbComboBox;

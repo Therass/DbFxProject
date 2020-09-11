@@ -2,10 +2,10 @@ package parameters;
 
 public class TableParameters {
 
-    public static String ID = "id";
-    public static String FRUIT = "fruit";
-    public static String SORT = "sort";
-    public static String AMOUNT = "amount";
-    public static String PROVIDER = "provider";
-    public static String TABLE = "main_table";
+    public static final String ID = "id";
+    public static final String FRUIT = "fruit";
+    public static final String SORT = "sort";
+    public static final String AMOUNT = "amount";
+    public static final String PROVIDER = "provider";
+    public static final String TABLE = "main_table";
 }

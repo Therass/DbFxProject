@@ -41,9 +41,9 @@
                   <TextField fx:id="sortTextField" layoutX="164.0" layoutY="29.0" prefHeight="25.0" prefWidth="130.0" promptText="Sort" />
                   <TextField fx:id="amountTextField" layoutX="314.0" layoutY="29.0" prefHeight="25.0" prefWidth="130.0" promptText="Amount" />
                   <TextField fx:id="providerTextField" layoutX="464.0" layoutY="29.0" prefHeight="25.0" prefWidth="130.0" promptText="Provider" />
-                  <Button fx:id="addButton" layoutX="14.0" layoutY="75.0" mnemonicParsing="false" onAction="#addDb" prefWidth="70.0" text="ADD" />
-                  <Button fx:id="updateButton" layoutX="120.0" layoutY="75.0" mnemonicParsing="false" onAction="#updateDb" prefWidth="70.0" text="UPDATE" />
-                  <Button fx:id="removeButton" layoutX="229.0" layoutY="75.0" mnemonicParsing="false" onAction="#removeDb" prefWidth="70.0" text="REMOVE" />
+                  <Button fx:id="addButton" layoutX="14.0" layoutY="75.0" mnemonicParsing="false" onAction="#addNewRecordToDataTable" prefWidth="70.0" text="ADD" />
+                  <Button fx:id="updateButton" layoutX="120.0" layoutY="75.0" mnemonicParsing="false" onAction="#updateRecordAtDataTable" prefWidth="70.0" text="UPDATE" />
+                  <Button fx:id="removeButton" layoutX="229.0" layoutY="75.0" mnemonicParsing="false" onAction="#removeRecordFromDataTable" prefWidth="70.0" text="REMOVE" />
                   <Button fx:id="reloadButton" layoutX="594.0" layoutY="72.0" mnemonicParsing="false" onAction="#reloadTableView">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">

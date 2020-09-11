@@ -5,7 +5,6 @@ import dbConnection.SqlDbConnection;
 import entitys.FruitRow;
 import parameters.TableParameters;
 import util.AlertWindow;
-import util.TextFieldsValidator;
 
 import java.sql.*;
 

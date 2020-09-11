@@ -117,7 +117,7 @@ public class ViewMainController {
     }
 
     @FXML
-    private void addDb() {
+    private void addNewRecordToDataTable() {
         if (new TextFieldsValidator().isValid(fruitTextField.getText(),
                 sortTextField.getText(),
                 amountTextField.getText(),
@@ -132,7 +132,7 @@ public class ViewMainController {
     }
 
     @FXML
-    private void updateDb() {
+    private void updateRecordAtDataTable() {
 
         if (new TextFieldsValidator().isValid(fruitTextField.getText(), amountTextField.getText())) {
             fruitDBService.updateMain(fruitTextField.getText(),
@@ -144,7 +144,7 @@ public class ViewMainController {
     }
 
     @FXML
-    private void removeDb() {
+    private void removeRecordFromDataTable() {
         if (new TextFieldsValidator().isValid(fruitTextField.getText())) {
             fruitDBService.removeFromMain(fruitTextField.getText(),
                     sortTextField.getText(),
