@@ -1,6 +1,7 @@
 package util;
 
 public class TextFieldsValidator {
+
     public boolean isValid(String... strings) {
         boolean isValidReturn = true;
         for (String string : strings) {

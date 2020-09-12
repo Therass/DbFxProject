@@ -19,9 +19,9 @@ import org.controlsfx.control.textfield.TextFields;
 import parameters.DbParameters;
 import parameters.TableParameters;
 import util.AlertWindow;
+import util.AutoCompleteSetManager;
 import util.TextFieldsValidator;
 
-import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -30,10 +30,6 @@ public class ViewMainController {
     private FruitDbService fruitDBService;
 
     public static ObservableList<FruitRow> fruitRowData;
-
-    public static Set<String> fruitAutoComplete = new LinkedHashSet<String>();
-    public static Set<String> sortAutoComplete = new LinkedHashSet<String>();
-    public static Set<String> providerAutoComplete = new LinkedHashSet<String>();
 
     @FXML
     private Button reloadButton;
@@ -80,7 +76,7 @@ public class ViewMainController {
     @FXML
     private void initialize() {
 
-        if (DbParameters.IS_SQL) {
+        if (DbParameters.getInstance().getIS_SQL()) {
             fruitDBService = new SqlFruitDbService();
             new InitSqlDb();
         } else {
@@ -93,7 +89,7 @@ public class ViewMainController {
 
         fillTableView();
 
-        fillTextFieldsAutoComplete();
+        fillAllTextFieldsAutoComplete();
 
     }
 
@@ -156,38 +152,15 @@ public class ViewMainController {
     @FXML
     private void reloadTableView() {
         fillTableView();
-        fillTextFieldsAutoComplete();
+        fillAllTextFieldsAutoComplete();
         clearTextFields();
     }
 
-    private void fillTextFieldsAutoComplete() {
+    private void fillAllTextFieldsAutoComplete() {
 
-        AutoCompletionBinding f = TextFields.bindAutoCompletion(fruitTextField, t -> {
-            return fruitAutoComplete.stream().filter(elem
-                    -> {
-                return elem.toLowerCase().startsWith(t.getUserText().toLowerCase());
-            }).collect(Collectors.toList());
-        });
-        f.setPrefWidth(130);
-        f.setVisibleRowCount(4);
-
-        AutoCompletionBinding s = TextFields.bindAutoCompletion(sortTextField, t -> {
-            return sortAutoComplete.stream().filter(elem
-                    -> {
-                return elem.toLowerCase().startsWith(t.getUserText().toLowerCase());
-            }).collect(Collectors.toList());
-        });
-        s.setPrefWidth(130);
-        s.setVisibleRowCount(4);
-
-        AutoCompletionBinding p = TextFields.bindAutoCompletion(providerTextField, t -> {
-            return providerAutoComplete.stream().filter(elem
-                    -> {
-                return elem.toLowerCase().startsWith(t.getUserText().toLowerCase());
-            }).collect(Collectors.toList());
-        });
-        p.setPrefWidth(130);
-        p.setVisibleRowCount(4);
+        addAutoCompleteToTextField(AutoCompleteSetManager.getInstance().getFruitTextFieldAutoCompleteSet(), fruitTextField);
+        addAutoCompleteToTextField(AutoCompleteSetManager.getInstance().getSortTextFieldAutoCompleteSet(), sortTextField);
+        addAutoCompleteToTextField(AutoCompleteSetManager.getInstance().getProviderTextFieldAutoCompleteSet(), providerTextField );
 
     }
 
@@ -196,6 +169,17 @@ public class ViewMainController {
         sortTextField.clear();
         amountTextField.clear();
         providerTextField.clear();
+    }
+
+    private void addAutoCompleteToTextField(Set<String> autoCompleteSetManagerSet, TextField textField) {
+        AutoCompletionBinding autoCompletionBinding = TextFields.bindAutoCompletion(textField, t -> {
+            return autoCompleteSetManagerSet.stream().filter(elem
+                    -> {
+                return elem.toLowerCase().startsWith(t.getUserText().toLowerCase());
+            }).collect(Collectors.toList());
+        });
+        autoCompletionBinding.setPrefWidth(130);
+        autoCompletionBinding.setVisibleRowCount(4);
     }
 
 }

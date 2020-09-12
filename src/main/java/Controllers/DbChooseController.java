@@ -50,13 +50,13 @@ public class DbChooseController {
     @FXML
     private void openWindowViewMain(javafx.event.ActionEvent actionEvent) throws IOException {
 
-        DbParameters.DB_NAME = (String) dbComboBox.getValue();
-        DbName dbName = dbList.getResourceByName(DbParameters.DB_NAME);
+        DbParameters.getInstance().setDB_NAME((String) dbComboBox.getValue());
+        DbName dbName = dbList.getResourceByName(DbParameters.getInstance().getDB_NAME());
         new IsSql(dbName.getProperty("isSQL"));
-        DbParameters.JDBC_DRIVER = dbName.getProperty("jdbcDriver");
-        DbParameters.DB_URL = dbName.getProperty("dbURL");
-        DbParameters.DB_USERNAME = dbName.getProperty("dbUserName");
-        DbParameters.DB_USERPASS = dbName.getProperty("dbUserPass");
+        DbParameters.getInstance().setJDBC_DRIVER(dbName.getProperty("jdbcDriver"));
+        DbParameters.getInstance().setDB_URL(dbName.getProperty("dbURL"));
+        DbParameters.getInstance().setDB_USERNAME(dbName.getProperty("dbUserName"));
+        DbParameters.getInstance().setDB_USERPASS(dbName.getProperty("dbUserPass"));
 
 
         Parent tableViewParent = FXMLLoader.load(getClass().getResource("/fxml/viewMain.fxml"));

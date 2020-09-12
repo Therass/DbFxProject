@@ -5,6 +5,7 @@ import dbConnection.SqlDbConnection;
 import entitys.FruitRow;
 import parameters.TableParameters;
 import util.AlertWindow;
+import util.AutoCompleteSetManager;
 
 import java.sql.*;
 
@@ -101,9 +102,8 @@ public class SqlFruitDbService implements FruitDbService {
             statement.executeQuery(select);
             final ResultSet resultSet = statement.getResultSet();
 
-            ViewMainController.fruitAutoComplete.clear();
-            ViewMainController.sortAutoComplete.clear();
-            ViewMainController.providerAutoComplete.clear();
+
+            AutoCompleteSetManager.getInstance().clearAllTextFieldAutoCompleteSets();
 
             while (resultSet.next()) {
                 final Integer id = resultSet.getInt("id");
@@ -112,9 +112,9 @@ public class SqlFruitDbService implements FruitDbService {
                 final String amount = resultSet.getString(4);
                 final String provider = resultSet.getString(5);
 
-                ViewMainController.fruitAutoComplete.add(fruit);
-                ViewMainController.sortAutoComplete.add(sort);
-                ViewMainController.providerAutoComplete.add(provider);
+                AutoCompleteSetManager.getInstance().addToFruitTextFieldAutoCompleteSet(fruit);
+                AutoCompleteSetManager.getInstance().addToSortTextFieldAutoCompleteSet(sort);
+                AutoCompleteSetManager.getInstance().addToProviderTextFieldAutoCompleteSet(provider);
 
                 ViewMainController.fruitRowData.add(new FruitRow(id, fruit, sort, amount, provider));
 

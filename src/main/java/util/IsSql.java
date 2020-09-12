@@ -6,9 +6,9 @@ public class IsSql {
 
     public IsSql(String isSQL) {
         if (isSQL.equals("SQL")) {
-            DbParameters.IS_SQL = true;
+            DbParameters.getInstance().setIS_SQL(true);
         } else {
-            DbParameters.IS_SQL = false;
+            DbParameters.getInstance().setIS_SQL(false);
         }
 
 
