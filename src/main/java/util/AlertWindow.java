@@ -1,4 +1,7 @@
+package util;
+
 import javafx.scene.control.Alert;
+
 
 public class AlertWindow {
 
@@ -10,5 +13,7 @@ public class AlertWindow {
         alert.setHeaderText(null);
         alert.setContentText(text);
         alert.showAndWait();
+
     }
+
 }

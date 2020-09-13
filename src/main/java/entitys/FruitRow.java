@@ -1,4 +1,6 @@
-public class Row {
+package entitys;
+
+public class FruitRow {
 
     private int id;
     private String fruit;
@@ -6,7 +8,7 @@ public class Row {
     private String amount;
     private String provider;
 
-    public Row(int id, String fruit, String sort, String amount, String provider) {
+    public FruitRow(int id, String fruit, String sort, String amount, String provider) {
         this.id = id;
         this.fruit = fruit;
         this.sort = sort;
@@ -14,7 +16,7 @@ public class Row {
         this.provider = provider;
     }
 
-    public Row() {
+    public FruitRow() {
     }
 
     public int getId() {
@@ -49,11 +51,11 @@ public class Row {
         this.amount = amount;
     }
 
-    public  void setProvider(String provider){
+    public void setProvider(String provider) {
         this.provider = provider;
     }
 
-    public String getProvider(){
+    public String getProvider() {
         return provider;
     }
 }

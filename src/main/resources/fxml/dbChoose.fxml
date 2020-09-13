@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="346.0" prefWidth="350.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.DbChooseController">
+   <children>
+      <Label layoutX="120.0" layoutY="54.0" text="Choose Database">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="dbComboBox" layoutX="76.0" layoutY="82.0" prefHeight="25.0" prefWidth="198.0" />
+      <Button fx:id="okButton" layoutX="159.0" layoutY="297.0" mnemonicParsing="false" onAction="#openWindowViewMain" text="OK" />
+   </children>
+</AnchorPane>

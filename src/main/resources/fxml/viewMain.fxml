@@ -10,7 +10,15 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+<AnchorPane id="AnchorPane" maxHeight="-Infinity"
+            maxWidth="-Infinity"
+            minHeight="-Infinity"
+            minWidth="-Infinity"
+            prefHeight="400.0"
+            prefWidth="650.0"
+            xmlns="http://javafx.com/javafx/8.0.171"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Controllers.ViewMainController">
    <children>
       <SplitPane dividerPositions="0.6658291457286433" orientation="VERTICAL" prefHeight="400.0" prefWidth="650.0">
         <items>
@@ -29,18 +37,18 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <TextField fx:id="fruitText" layoutX="14.0" layoutY="29.0" prefHeight="25.0" prefWidth="130.0" promptText="Fruit" />
-                  <TextField fx:id="sortText" layoutX="164.0" layoutY="29.0" prefHeight="25.0" prefWidth="130.0" promptText="Sort" />
-                  <TextField fx:id="amountText" layoutX="314.0" layoutY="29.0" prefHeight="25.0" prefWidth="130.0" promptText="Amount" />
-                  <TextField fx:id="providerText" layoutX="464.0" layoutY="29.0" prefHeight="25.0" prefWidth="130.0" promptText="Provider" />
-                  <Button fx:id="addButton" layoutX="14.0" layoutY="75.0" mnemonicParsing="false" onAction="#addDb" prefWidth="70.0" text="ADD" />
-                  <Button fx:id="updateButton" layoutX="120.0" layoutY="75.0" mnemonicParsing="false" onAction="#updateDb" prefWidth="70.0" text="UPDATE" />
-                  <Button fx:id="removeButton" layoutX="229.0" layoutY="75.0" mnemonicParsing="false" onAction="#removeDb" prefWidth="70.0" text="REMOVE" />
+                  <TextField fx:id="fruitTextField" layoutX="14.0" layoutY="29.0" prefHeight="25.0" prefWidth="130.0" promptText="Fruit" />
+                  <TextField fx:id="sortTextField" layoutX="164.0" layoutY="29.0" prefHeight="25.0" prefWidth="130.0" promptText="Sort" />
+                  <TextField fx:id="amountTextField" layoutX="314.0" layoutY="29.0" prefHeight="25.0" prefWidth="130.0" promptText="Amount" />
+                  <TextField fx:id="providerTextField" layoutX="464.0" layoutY="29.0" prefHeight="25.0" prefWidth="130.0" promptText="Provider" />
+                  <Button fx:id="addButton" layoutX="14.0" layoutY="75.0" mnemonicParsing="false" onAction="#addNewRecordToDataTable" prefWidth="70.0" text="ADD" />
+                  <Button fx:id="updateButton" layoutX="120.0" layoutY="75.0" mnemonicParsing="false" onAction="#updateRecordAtDataTable" prefWidth="70.0" text="UPDATE" />
+                  <Button fx:id="removeButton" layoutX="229.0" layoutY="75.0" mnemonicParsing="false" onAction="#removeRecordFromDataTable" prefWidth="70.0" text="REMOVE" />
                   <Button fx:id="reloadButton" layoutX="594.0" layoutY="72.0" mnemonicParsing="false" onAction="#reloadTableView">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@reload.png" />
+                              <Image url="@../reload.png" />
                            </image>
                            <viewport>
                               <Rectangle2D />
